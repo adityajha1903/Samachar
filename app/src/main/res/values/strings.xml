@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Samachar</string>
+    <string name="dash">~</string>
+    <string name="general">GENERAL</string>
+    <string name="business">BUSINESS</string>
+    <string name="entertainment">ENTERTAINMENT</string>
+    <string name="health">HEALTH</string>
+    <string name="science">SCIENCE</string>
+    <string name="sports">SPORTS</string>
+    <string name="technology">TECHNOLOGY</string>
+    <string name="search">Search…</string>
+    <string name="no_articles_found">No Articles Found!!!</string>
+</resources>

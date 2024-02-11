@@ -1,0 +1,71 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.adiandrodev.samachar'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.adiandrodev.samachar"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file("local.properties").newDataInputStream())
+        buildConfigField "String","API_KEY","\"${properties.getProperty("API_KEY")}\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        buildConfig = true
+        viewBinding = true
+        dataBinding = true
+    }
+}
+
+dependencies {
+
+    implementation 'com.github.KwabenBerko:News-API-Java:1.0.2'
+
+    // Splash Screen
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+    // ViewModel
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
+    // LiveData
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0'
+    // Annotation processor
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.7.0'
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    // Dagger
+    implementation 'com.google.dagger:dagger:2.48.1'
+    // Annotation processor
+    kapt 'com.google.dagger:dagger-compiler:2.48.1'
+
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

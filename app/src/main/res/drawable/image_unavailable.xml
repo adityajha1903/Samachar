@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:width="100dp"
+        android:height="100dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#7A7A7A"/>
+            <corners android:radius="10dp"/>
+        </shape>
+    </item>
+    <item android:height="70dp" android:width="70dp" android:gravity="center" android:drawable="@drawable/baseline_hide_image_24"/>
+</layer-list>
